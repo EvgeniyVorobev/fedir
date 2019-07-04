@@ -1,0 +1,105 @@
+<modal #optionsModal>
+  <modal-header>
+    <h1>Options</h1>
+  </modal-header>
+  <modal-content>
+    <div class="form-group">
+      <label class="control-label">Price</label>
+      <input type="number" class="form-control" placeholder="Price">
+    </div>
+
+    <div class="racing-months-container">
+
+      <h3>Racing</h3>
+
+      <div class="form-group" *ngFor="let racingMonth of racingMonths">
+        <label class="control-label">{{ racingMonth }}</label>
+        <input type="number" class="form-control" [placeholder]="racingMonth">
+      </div>
+
+    </div>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-danger">
+      Cancel
+    </button>
+    <button class="btn btn-success">
+      Apply
+    </button>
+  </modal-footer>
+</modal>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <card>
+        <a routerLink="../add-startup" class="btn btn-primary">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          Add new dream
+        </a>
+        <a routerLink="../startups" class="btn btn-info">
+          <i class="fa fa-list-ul" aria-hidden="true"></i>
+          All dreams
+        </a>
+      </card>
+    </div>
+  </div>
+
+  <h1>Prices and Seasons (if applicable):</h1>
+  <div #pivot_pricelist></div>
+
+  <h1>Seasonality impact (if applicable):</h1>
+  <div #pivot_seasonality></div>
+
+  <h1>Simple monthly Sales and Business Rump-Up:</h1>
+  <div #pivot_quantityandacceleration></div>
+
+  <h1>Final Forecasted Volume taking into consideration Seasonality:</h1>
+  <div #pivot_volume></div>
+
+  <h1>Gross Sales (Sales at list price):</h1>
+  <div #pivot_grosssales></div>
+
+  <h1>Standard Discounts:</h1>
+  <div #pivot_discounts></div>
+
+  <h1>Returns and Rebates:</h1>
+  <div #pivot_rebatesreturns></div>
+
+  <h1>Net Sales:</h1>
+  <div #pivot_netsales></div>
+
+  <h1>Cost Of Goods or Services:</h1>
+  <div #pivot_cogs></div>
+
+  <h1>Gross Margin:</h1>
+  <div #pivot_grossmargin></div>
+
+  <h1>Advertisement:</h1>
+  <div #pivot_advertisement></div>
+
+  <h1>Promotion:</h1>
+  <div #pivot_promotion></div>
+
+  <h1>Opex:</h1>
+  <div #pivot_opex></div>
+
+  <h1>Capex:</h1>
+  <div #pivot_capex></div>
+
+  <h1>Sundry:</h1>
+  <div #pivot_sundry></div>
+
+  <h1>Penalties:</h1>
+  <div #pivot_penalties></div>
+
+  <h1>Donations:</h1>
+  <div #pivot_donation></div>
+
+  <h1>Operating Profit:</h1>
+  <div #pivot_operatingprofit></div>
+
+
+  <div #pivot1></div>
+  <div #pivot2></div>
+
+</div>

@@ -1,0 +1,26 @@
+@import '../../shared/theme/conf';
+.sign-up-card {
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.file {
+  display: none;
+}
+
+.avatar {
+  text-align: center;
+  margin: 10px 0;
+  img {
+    width: 30%;
+  }
+}
+
+@media (max-width: 420px) {
+  .sign-up-card {
+    margin: 0;
+    border: none;
+  }
+}

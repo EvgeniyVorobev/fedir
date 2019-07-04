@@ -1,0 +1,80 @@
+<!--
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <card>
+        <a routerLink="../add-startup" class="btn btn-primary">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          Add new dream
+        </a>
+      </card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <card>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Created
+              </th>
+              <th>
+                Title
+              </th>
+              <th>
+                Author
+              </th>
+              <th>
+
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>
+                <a href="#" class="btn btn-info">Comments</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </card>
+    </div>
+  </div>
+</div>
+-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="card col-6">
+        <input type="text" placeholder="id" value="0" disabled>
+        <select #idea_list>
+          <option *ngFor="let idea of ideas"><div class="id" >{{idea.id}}</div> {{idea.ideatitle}}</option>
+        </select>
+        <input #commenttext type="text" placeholder="commenttext">
+        <input type="button" class="btn btn-grey" value="POST" (click)="createInfo(idea_list.selectedOptions, commenttext.value)">
+      </div>
+
+      <div class="card col-6">
+        <div *ngIf="comments != ''">
+          <div class="card" *ngFor="let comment of comments">
+            <input disabled type="text" value="{{comment.id}}">
+            <input type="text" value="{{comment.ideaid}}">
+            <input type="text" value="{{comment.userprofileId}}">
+            <input #comtext (blur)="comment.commenttext = comtext.value; updateInfo(comment); getInfo()" type="text" value="{{comment.commenttext}}">
+
+            <input type="button" value="X" (click)="deleteInfo(comment.id);">
+          </div>
+        </div>
+        <input type="button" class="btn btn-grey" value="GET" (click)="getInfo()">
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <card>
+        <a routerLink="../add-startup" class="btn btn-primary">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          Add new dream
+        </a>
+        <a routerLink="../startups" class="btn btn-info">
+          <i class="fa fa-list-ul" aria-hidden="true"></i>
+          All dreams
+        </a>
+      </card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <card>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>datehappened</th>
+              <th>description</th>
+              <th>quantity</th>
+              <th>valueofmoney</th>
+              <th>pnlrow</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr class="row" *ngFor="let item of list">
+                <td>{{item.datehappened}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.valueofmoney}} {{item.currency}}</td>
+                <td>{{item.pnlrow}}</td>
+                <td>
+                  <a href="#" class="btn btn-info">Edit</a>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </card>
+    </div>
+  </div>
+</div>

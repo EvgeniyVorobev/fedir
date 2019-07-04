@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="card">
+        <div class="form-group">
+          <h3 class="form-label">Leave your comment</h3>
+        </div>
+        <div class="form-group">
+          <label for="comment" class="control-label">Comment:</label>
+          <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- This is section for all submitted comments -->
+  <div class="row" *ngFor="let item of list">
+    <div class="col-xs-12">
+      <div class="card comment">
+        <div class="row">
+          <div class="col-xs-2 text-center">
+            <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
+            <h4 class="text-center">{{ item.userprofile  == undefined ? false: item.userprofile.username }}</h4>
+          </div>
+          <div class="col-xs-10">
+            <div class="date">{{item.commentdatetime}}</div>
+            {{item.commenttext}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="card card-block login-card">
+  <form *ngIf="state == 'login'" name="form">
+    <h3 class="form-label">Login</h3>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon addon-left" id="username">
+          <i class="fa fa-user fa-fw"></i>
+        </span>
+        <input class="form-control with-primary-addon"  #username placeholder="User Account / e-mail" type="text">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon addon-left" id="password">
+          <i class="fa fa-lock fa-fw"></i>
+        </span>
+        <input class="form-control with-primary-addon" #password  placeholder="Password" type="password">
+      </div>
+      <button class="btn btn-lg btn-primary" ng-click="login(email, password)">Login</button>
+      <a routerLink="../sign-up" class="btn btn-link">Register Now. →</a>
+      <a class="btn btn-block btn-info" click="setState('reset')">Reset password</a>
+      <a routerLink="../all-publicideas" class="btn btn-link">Skip Login (unauthenticated)</a>
+    </div>
+  </form>
+
+  <form *ngIf="state == 'reset'">
+    <h3>Reset Password</h3>
+    <input type="text" #email class="form-control" placeholder="Email" />
+    <br />
+    <a class="btn btn-block btn-success" (click)="resetPassword(email)">Reset password</a>
+    <a class="btn btn-block btn-success" (click)="setState('login')">Login</a>
+    <a class="btn btn-block btn-info" (click)="setState('signup')">Signup</a>
+  </form>
+
+  <form *ngIf="state == 'signup'">
+    <h3>Login</h3>
+    <input type="text" class="form-control" #username placeholder="Username" />
+    <input type="text" class="form-control" #email placeholder="Email" />
+    <input type="password" class="form-control" #password placeholder="Password" />
+    <input type="confirmation" class="form-control" #confirmPassword placeholder="Confirm Password" />
+    <select class="form-control" #type>
+      <option value="free">Free</option>
+      <option value="paid">Paid</option>
+    </select>
+    <br />
+    <a class="btn btn-block btn-success" 
+      (click)="signup(username, email, password, confirmPassword, type)">Signup</a>
+    <a class="btn btn-block btn-info" (click)="setState('reset')">Reset password</a>
+    <a class="btn btn-block btn-info" (click)="setState('login')">Login</a>
+  </form>
+
+
+  
+</div>
+
