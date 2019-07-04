@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
+    "postinstall": "ng build --aot -prod",
+    "start": "node server.js",
     "ng": "ng",
     "heroku logs -n 200": "ng serve",
     "build": "ng build --base-href ./",
@@ -30,6 +33,7 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "echarts": "^3.8.5",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "jbpivot": "^0.1.0",
     "jquery": "^3.4.0",
@@ -40,12 +44,14 @@
     "ngx-modal": "0.0.29",
     "ngx-pagination": "^3.0.3",
     "normalize.css": "^7.0.0",
+    "path": "^0.12.7",
     "pell": "^1.0.4",
     "roboto-fontface": "^0.8.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
     "save": "^2.3.3",
     "sweetalert2": "^7.6.3",
+    "typescript": "latest",
     "z5h.pivot": "0.0.1",
     "zone.js": "^0.8.14"
   },
@@ -58,6 +64,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -72,6 +79,7 @@
     "typescript": "latest"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=10.15.3",
+    "npm": ">=6.4.1"
   }
 }
